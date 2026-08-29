@@ -1,0 +1,24 @@
+generated: '2026-08-28'
+method: searched
+source: https://sit-developer.sealedair.com/apis
+limit_count: 0
+rate_limits: []
+headers: []
+note: >-
+  No published rate limits. Sealed Air's API program runs on Azure API Management (service
+  apim-prd-eus2-seeint-001 in production, apim-sit-eus2-seeint-001 in SIT), where quotas and
+  rate-limit policies are normally configured per product — but the product and API catalog is
+  gated: the portal's data API returns 401 anonymously, so no quota, window, burst or 429 response
+  header can be read without an account. Nothing was observed on a live unauthenticated response
+  either, because the SEE Smart Service Link cloud gateway rejects every anonymous request with a
+  bare 401 carrying no RateLimit-* or Retry-After headers.
+evidence:
+  - url: https://sit-developer.sealedair.com/apis
+    status: 200
+    finding: APIs list page renders no APIs to an anonymous visitor
+  - url: https://sit-apim-manage.sealedair.com/subscriptions/000/resourceGroups/000/providers/Microsoft.ApiManagement/service/apim-sit-eus2-seeint-001/apis?api-version=2022-04-01-preview
+    status: 401
+    finding: no anonymous access to products, quotas or policies
+  - url: https://see-link-cloud-gateway-demo.digital.sealedair.com/V1/API
+    status: 401
+    finding: gateway 401 carries no RateLimit-*, X-RateLimit-* or Retry-After header

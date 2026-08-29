@@ -1,0 +1,114 @@
+generated: '2026-08-28'
+method: probed
+source: live GET probes of every Sealed Air host named in apis.yml plus the two Azure API Management developer-portal hosts
+note: >-
+  No /.well-known document is served on any Sealed Air host. hit_count is 0 and NO WellKnown or
+  SecurityTxt pointer is emitted. Two hosts answer 200 for every path and are catch-alls, not
+  documents: developer.sealedair.com (the production Azure API Management developer portal) returns
+  the same 514-byte "content hasn't been published yet" placeholder for every URL including a random
+  control path, and see-link-ui-demo.digital.sealedair.com returns the same 22,409-byte Angular SPA
+  shell for every URL including a random control path. Only www.sealedair.com and
+  sit-developer.sealedair.com return honest 404s.
+hit_count: 0
+hosts:
+  - host: https://www.sealedair.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+      - path: /.well-known/agent-card.json
+        status: 404
+      - path: /.well-known/agent.json
+        status: 404
+      - path: /llms.txt
+        status: 404
+    soft_404_control:
+      path: /random-soft404-control
+      status: 404
+      bytes: 373098
+      verdict: honest-404
+  - host: https://sit-developer.sealedair.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+      - path: /.well-known/agent-card.json
+        status: 404
+      - path: /llms.txt
+        status: 404
+    soft_404_control:
+      path: /random-soft404-control
+      status: 404
+      bytes: 3169
+      verdict: honest-404
+  - host: https://developer.sealedair.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 200
+        file: null
+        verdict: catch-all-placeholder-not-a-document
+      - path: /.well-known/openid-configuration
+        status: 200
+        file: null
+        verdict: catch-all-placeholder-not-a-document
+      - path: /.well-known/oauth-authorization-server
+        status: 200
+        file: null
+        verdict: catch-all-placeholder-not-a-document
+      - path: /.well-known/api-catalog
+        status: 200
+        file: null
+        verdict: catch-all-placeholder-not-a-document
+      - path: /.well-known/ai-plugin.json
+        status: 200
+        file: null
+        verdict: catch-all-placeholder-not-a-document
+      - path: /llms.txt
+        status: 200
+        file: null
+        verdict: catch-all-placeholder-not-a-document
+    soft_404_control:
+      path: /random-soft404-control
+      status: 200
+      bytes: 514
+      verdict: catch-all-200-every-path-identical-body
+  - host: https://see-link-ui-demo.digital.sealedair.com
+    documents:
+      - path: /.well-known/agent-card.json
+        status: 200
+        file: null
+        verdict: catch-all-spa-shell-not-a-document
+      - path: /openapi.json
+        status: 200
+        file: null
+        verdict: catch-all-spa-shell-not-a-document
+      - path: /swagger.json
+        status: 200
+        file: null
+        verdict: catch-all-spa-shell-not-a-document
+    soft_404_control:
+      path: /random-soft404-control
+      status: 200
+      bytes: 22409
+      verdict: catch-all-200-every-path-identical-body
+unreachable:
+  - host: https://api.sealedair.com
+    reason: DNS does not resolve
+  - host: https://docs.sealedair.com
+    reason: DNS does not resolve
+  - host: https://www.sealed-air.com
+    reason: legacy domain returns 403/441 to every request including the site root

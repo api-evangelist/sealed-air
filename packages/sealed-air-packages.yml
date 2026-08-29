@@ -1,0 +1,44 @@
+generated: '2026-08-28'
+method: searched
+source: https://registry.npmjs.org/@sealedair%2Fstyles
+note: >-
+  One first-party package was found across npm, PyPI, RubyGems, crates.io and GitHub search: an
+  internal front-end style library published under the company-owned @sealedair npm scope. It is a
+  Bootstrap theme, NOT an API client, so no `SDKs` pointer is emitted — Sealed Air publishes no
+  client library for any API. Its last release was 2018-02-08, more than eight years before this
+  probe, which is a strong abandonment signal for the digital-platform work it supported.
+packages:
+  - language: javascript
+    registry: npm
+    name: "@sealedair/styles"
+    url: https://www.npmjs.com/package/@sealedair/styles
+    install: npm install @sealedair/styles
+    official: true
+    kind: ui-styles
+    version: 1.1.1
+    published: '2018-02-08'
+    license: MIT
+    release_count: 4
+    evidence: >-
+      Published under the company-controlled @sealedair scope; all five npm maintainers are
+      sealedair-* accounts; description reads "Twitter Bootstrap project that works for any Sealed
+      Air Digital project to give the same look and feel".
+registries_checked:
+  - registry: npm
+    query: sealedair / "sealed air"
+    result: 1 first-party package (@sealedair/styles); all other matches are unrelated (air-datepicker, @air/*)
+  - registry: pypi
+    query: sealedair
+    result: 404 — no package
+  - registry: rubygems
+    query: sealedair
+    result: no first-party package
+  - registry: crates.io
+    query: sealedair
+    result: no first-party package
+  - registry: github
+    query: sealedair in:name,description
+    result: >-
+      no Sealed Air GitHub organization exists (api.github.com/orgs/sealedair, /sealed-air and
+      /sealedaircorp all return 404); matching repositories are third-party personal projects
+sdk_count: 0

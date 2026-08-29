@@ -1,0 +1,22 @@
+generated: '2026-08-28'
+method: searched
+source: https://sit-developer.sealedair.com/
+plan_count: 0
+plans: []
+note: >-
+  Sealed Air publishes no API pricing of any kind. There is no pricing, plans or subscription page
+  on www.sealedair.com, and the Azure API Management developer portal that fronts the API program
+  exposes only Sign up / Sign In — its API and product catalog (where APIM subscription tiers would
+  be listed) returns 401 to an anonymous caller. Packaging products themselves are sold through
+  sales and distribution, not a published price list, so the absence of API pricing is consistent
+  with the company's commercial model rather than an oversight in our probe.
+evidence:
+  - url: https://sit-developer.sealedair.com/
+    status: 200
+    finding: portal home offers only Sign up / Sign In; no plans, products or pricing shown anonymously
+  - url: https://sit-apim-manage.sealedair.com/subscriptions/000/resourceGroups/000/providers/Microsoft.ApiManagement/service/apim-sit-eus2-seeint-001/apis?api-version=2022-04-01-preview
+    status: 401
+    finding: developer-portal data API refuses anonymous listing of APIs and products
+  - url: https://www.sealedair.com/company/media-center/press-releases
+    status: 200
+    finding: no pricing or developer-plan page exists anywhere in the site navigation
