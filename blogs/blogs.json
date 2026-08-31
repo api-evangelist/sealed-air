@@ -1,0 +1,11 @@
+{
+  "repo": "sealed-air",
+  "feeds": [
+    {
+      "source": "https://www.sealedair.com/contact",
+      "error": "HTTPError"
+    }
+  ],
+  "post_count": 0,
+  "fetched": "2026-08-30T22:33:40Z"
+}
