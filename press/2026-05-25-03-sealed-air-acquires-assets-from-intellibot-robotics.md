@@ -1,7 +1,9 @@
 ---
 title: Sealed Air Acquires Assets from Intellibot Robotics
 url: https://ir.sealedair.com/node/11006/pdf
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Sealed Air" press release artificial intelligence'
 position: 3
 source: serpapi-google

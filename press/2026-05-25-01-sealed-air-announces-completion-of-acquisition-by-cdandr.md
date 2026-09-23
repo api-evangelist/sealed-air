@@ -1,7 +1,9 @@
 ---
 title: Sealed Air Announces Completion of Acquisition by CD&R
 url: https://www.prnewswire.com/news-releases/sealed-air-announces-completion-of-acquisition-by-cdr-302738274.html
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Sealed Air" press release artificial intelligence'
 position: 1
 source: serpapi-google

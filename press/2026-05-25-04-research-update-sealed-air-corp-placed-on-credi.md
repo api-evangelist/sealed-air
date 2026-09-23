@@ -1,7 +1,9 @@
 ---
 title: 'Research Update: Sealed Air Corp. Placed On Credi'
 url: https://www.spglobal.com/ratings/en/regulatory/article/-/view/type/HTML/id/3481462
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Sealed Air" press release artificial intelligence'
 position: 4
 source: serpapi-google

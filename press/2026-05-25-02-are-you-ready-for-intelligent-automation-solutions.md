@@ -1,7 +1,9 @@
 ---
 title: Are You Ready for Intelligent Automation Solutions?
 url: https://www.sealedair.com/uk/resources/blog/automated-ecommerce-fulfillment-services-solution
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Sealed Air" press release artificial intelligence'
 position: 2
 source: serpapi-google
